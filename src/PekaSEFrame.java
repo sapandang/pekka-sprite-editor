@@ -162,7 +162,18 @@ public class PekaSEFrame extends JFrame {
 	
 	public PekaSEFrame() {
 		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			//UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			for(int i=0;i<UIManager.getInstalledLookAndFeels().length;i++) {
+				System.out.println(UIManager.getInstalledLookAndFeels()[i]);
+			}
+
+
+			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+
+
+
+
+
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
@@ -197,7 +208,7 @@ public class PekaSEFrame extends JFrame {
 		
 		setTitle("PekaSE");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 699, 496);
+		setBounds(100, 100, 800, 800);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -1063,7 +1074,7 @@ public class PekaSEFrame extends JFrame {
 		textFieldAniStill.setColumns(10);
 		
 		JLabel lblWalking = new JLabel("Walking:");
-		lblWalking.setBounds(27, 218, 46, 14);
+		lblWalking.setBounds(27, 218, 46, 18);
 		panel_1.add(lblWalking);
 		
 		textFieldAniWalk = new JTextField();

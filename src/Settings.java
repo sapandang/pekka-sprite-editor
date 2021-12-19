@@ -7,7 +7,7 @@ public class Settings {
 	public static String EPISODES_PATH = "";
 	public static String TILES_PATH = "";
 	public static String SCENERY_PATH = "";
-	public static String SPRITE_PATH = "";
+	public static String SPRITE_PATH = "/home/sapan/Documents/tools/godot/pekaakana/pekka-kana-2-1.2.4/data/sprites/";
 	public static String MUSIC_PATH = "";
 	public static String GFX_PATH = "";
 	

@@ -153,7 +153,7 @@ public class PK2Sprite {
 	
 	public boolean loadFile() {
 		DataInputStream dis = null;
-		
+		System.out.println("loading file "+filename.getName());
 		boolean ok = false;
 		
 		try {
@@ -977,6 +977,9 @@ public class PK2Sprite {
 			stream = new FileInputStream(new File(ImageFileStr));
 			
 			BufferedImage image = ImageIO.read(stream);
+
+
+
 			BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_BYTE_INDEXED, (IndexColorModel) image.getColorModel());
 
 		    byte[] data = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
@@ -1027,7 +1030,14 @@ public class PK2Sprite {
 		    }
 			
 		    this.image = result.getSubimage(frameX, frameY, frameWidth, frameHeight);
-		    
+
+		    //wirte to file
+            File outputfile = new File("gen/saved.png");
+            ImageIO.write(this.image, "png", outputfile);
+
+            File outputfilex = new File("gen/savedx.png");
+            ImageIO.write(result, "png", outputfilex);
+
 		    ok = true;
 		} catch (IOException e) {
 			e.printStackTrace();
